@@ -1,4 +1,10 @@
 package com.moonpi.swiftnotes;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -67,8 +73,12 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
+        AppCenter.start(getApplication(), "964ef4bb-0db3-4323-b686-2dd672697ee7",
+                Analytics.class, Crashes.class);
+        AppCenter.start(getApplication(), "964ef4bb-0db3-4323-b686-2dd672697ee7", Analytics.class, Crashes.class);
         // Initialize local file path and backup file path
         localPath = new File(getFilesDir() + "/" + NOTES_FILE_NAME);
 

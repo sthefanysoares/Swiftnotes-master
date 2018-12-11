@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion '22.0.1'
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId 'com.moonpi.swiftnotes'
         minSdkVersion 19
@@ -34,3 +34,6 @@ dependencies {
 
     androidTestCompile 'com.xamarin.testcloud:espresso-support:1.1'
 }
+dependencies { def appCenterSdkVersion = '1.10.0'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}" }
